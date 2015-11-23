@@ -90,7 +90,7 @@ int start() {
 
    for (int i = 0; i < Total; i ++) {
       Ticket2 = OrderSelect(i, SELECT_BY_POS, MODE_TRADES);
-      if(OrderType() <= OP_SELL &&  OrderSymbol() == Symbol()) {
+      if(OrderType() <= OP_SELL &&  OrderSymbol() == Symbol() && OrderMagicNumber == MagicNumber) {
          IsTrade = True;
          if(OrderType() == OP_BUY) {
             //Close
