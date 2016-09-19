@@ -76,7 +76,7 @@ int start() {
    double Sell2_1 = iMA(NULL, 0, 10, 0, MODE_SMA, PRICE_CLOSE, 1);
    double Sell2_2 = iMA(NULL, 0, 40, 0, MODE_SMA, PRICE_CLOSE, 1);
    
-   StopLevel = MarketInfo(Symbol(), MODE_STOPLEVEL) + MarketInfo(Symbol(), MODE_SPREAD); // Defining minimum StopLevel
+   StopLevel = (MarketInfo(Symbol(), MODE_STOPLEVEL) + MarketInfo(Symbol(), MODE_SPREAD)) / P; // Defining minimum StopLevel
 
    if (StopLoss < StopLevel) StopLoss = StopLevel;
    if (TakeProfit < StopLevel) TakeProfit = StopLevel;
